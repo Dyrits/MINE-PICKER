@@ -44,5 +44,5 @@ You can try the game on [CodeGym](https://codegym.cc/projects/apps/29159).
 V1.01 - Completed
 
 #### Last update
-04/04/2020  
-(README | 04/07/2020)
+04/07/2020  
+(README | 19/07/2020)
