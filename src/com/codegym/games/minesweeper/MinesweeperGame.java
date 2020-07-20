@@ -24,9 +24,7 @@ public class MinesweeperGame extends Game {
             for (int x = 0; x < SIDE; x++) {
                 setCellValue(x, y, "");
                 boolean isMine = getRandomNumber(10) < 1;
-                if (isMine) {
-                    countMinesOnField++;
-                }
+                if (isMine) { countMinesOnField++; }
                 gameField[y][x] = new GameObject(x, y, isMine);
                 setCellColor(x, y, Color.DIMGREY);
             }
@@ -39,15 +37,9 @@ public class MinesweeperGame extends Game {
         List<GameObject> result = new ArrayList<>();
         for (int y = gameObject.y - 1; y <= gameObject.y + 1; y++) {
             for (int x = gameObject.x - 1; x <= gameObject.x + 1; x++) {
-                if (y < 0 || y >= SIDE) {
-                    continue;
-                }
-                if (x < 0 || x >= SIDE) {
-                    continue;
-                }
-                if (gameField[y][x] == gameObject) {
-                    continue;
-                }
+                if (y < 0 || y >= SIDE) { continue; }
+                if (x < 0 || x >= SIDE) { continue; }
+                if (gameField[y][x] == gameObject) { continue; }
                 result.add(gameField[y][x]);
             }
         }
@@ -74,8 +66,7 @@ public class MinesweeperGame extends Game {
             if (gameField[y][x].isMine) {
                 setCellValueEx(x, y, Color.FIREBRICK, MINE);
                 gameOver();
-            }
-            else if (countClosedTiles == countMinesOnField) {
+            } else if (countClosedTiles == countMinesOnField) {
                 win();
             } else if (gameField[y][x].countMineNeighbors == 0) {
                 setCellValue(x, y, "");
@@ -83,7 +74,8 @@ public class MinesweeperGame extends Game {
                 for (GameObject neighbor : getNeighbors(gameField[y][x])) {
                     openTile(neighbor.getX(), neighbor.getY());
                 }
-            } else {
+            }
+            else {
                 setCellNumber(x, y, gameField[y][x].countMineNeighbors);
             }
             if (!isGameStopped) {
