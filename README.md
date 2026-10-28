@@ -14,6 +14,9 @@ The original README's changelog:
 
 - V1.01: colors modified; grid extended to 18x18.
 
+
+The original task description from CodeGym is preserved in [ASSIGNMENT.md](ASSIGNMENT.md).
+
 ## Built With
 
 - Java
